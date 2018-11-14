@@ -64,7 +64,7 @@ class AuthorizationSupport {
     Authentication auth = new PreAuthenticatedAuthenticationToken(runAsUser,
                                                                   null,
                                                                   new ArrayList<>());
-    log.debug("inside serviceAccountCanAccessApplication() : {}",permissionEvaluator.getPermission(runAsUser).applications.toListString();)
+    log.debug("inside serviceAccountCanAccessApplication() : {}",permissionEvaluator.getPermission(runAsUser).applications.toListString());
     return permissionEvaluator.hasPermission(auth,
                                              application,
                                              'APPLICATION',
