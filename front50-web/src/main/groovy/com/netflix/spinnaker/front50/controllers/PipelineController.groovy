@@ -94,7 +94,7 @@ class PipelineController {
     return pipelineDAO.history(id, limit)
   }
 
-  @PreAuthorize("(@fiatPermissionEvaluator.storeWholePermission() and hasPermission(#pipeline.application, 'APPLICATION', 'WRITE') and @authorizationSupport.hasRunAsUserPermission(#pipeline)) or @fiatPermissionEvaluator.isAdmin()")
+  @PreAuthorize("@fiatPermissionEvaluator.storeWholePermission() and hasPermission(#pipeline.application, 'APPLICATION', 'WRITE') and @authorizationSupport.hasRunAsUserPermission(#pipeline)")
   @RequestMapping(value = '', method = RequestMethod.POST)
   Pipeline save(@RequestBody Pipeline pipeline) {
 
